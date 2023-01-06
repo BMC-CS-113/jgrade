@@ -38,6 +38,14 @@ To make use of this, you first need to build the jgrader jar file
 using maven. The jar includes many classes you can make use of, 
 as well as a main method for running and producing grading output.
 
+### Working on BMC CS lab servers
+
+First clone this repository on a CS lab machine. 
+The lab machines do not have maven installed. 
+Download maven from https://maven.apache.org/download.cgi
+and then install your
+own copy of maven by following these instructions: https://maven.apache.org/install.html.
+
 ### Creating the jgrader jar file.
 Run `mvn package` from the root of the directory. This should create
 a new directory called `target` and a jar file in that directory
