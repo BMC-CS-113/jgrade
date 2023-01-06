@@ -9,7 +9,7 @@ created by Tim Kutcher.
 
 - [Overview](#overview)
 - [Quick Start](#quick-start)
-- [Quick Start](#details)
+- [Details](#details)
 - [Features](#features)
 - [Development](#development)
     - [Requirements](#requirements)
@@ -88,14 +88,17 @@ Now if you run, `./run_autograder --local` you should no longer see the error.
 
 ### Assignment and autograder example
 
-Now, I would recommend looking at an example assignment. Jump to
+Now you are reading to look at an example assignment and autograder. Jump to
 https://github.com/BMC-CS-113/jgrade/tree/dev/examples/gradescope
-and look at the README there. If this is your first time using
+and look at the README there. 
+
+If this is your first time using
 gradescope as part of a course staff, watch Ellen Spertus's
 (10 minute Youttube video)[https://youtu.be/o1FHbHZwyUY]
 on How to use JGrade for autograding Java assignments on Gradescope.
+If you are familiar with gradescope as an instructor/TA, you can skip the video.
 
-After watching the video, ping @azpoliak. He will add you to the course
+Next, ping @azpoliak. He will add you to the course
 Gradescope as an instructor. From there, your task will be to create a
 new assignment on gradescope for this example assignment.
 
