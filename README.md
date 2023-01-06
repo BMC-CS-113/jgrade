@@ -2,16 +2,14 @@
 
 _A library for grading Java assignments_
 
-This is a fork of [tkutcher/JGrade](https://github.com/tkutcher/jgrade),
-created by Tim Kutcher. Because he has moved on to other projects, I
-forked it so I could run it with the current (2022) version of Gradescope.
-I have made minor changes to the JGrade library and significant changes
-to the [Gradescope example](examples/gradescope/README.md). See
-[my changes](https://github.com/tkutcher/jgrade/compare/tkutcher:jgrade:dev...espertus:jgrade:dev)
-.
+This is a fork of [espertusnu/jgrade](https://github.com/espertusnu/jgrade)
+created by Ellen Spertus[https://ellenspertus.com/], which is a fork of
+[tkutcher/JGrade](https://github.com/tkutcher/jgrade),
+created by Tim Kutcher. 
 
 - [Overview](#overview)
 - [Quick Start](#quick-start)
+- [Quick Start](#details)
 - [Features](#features)
 - [Development](#development)
     - [Requirements](#requirements)
@@ -34,12 +32,74 @@ It was designed to produce the output needed for Gradescope while being
 extensible enough to produce different
 outputs and configure the specific JSON output Gradescope is looking for.
 
-## Quick Start
+## Quick Start/Tutorial
 
-To make use of this, you first need to grab the jar file from
-the [Releases](https://github.com/tkutcher/jgrade/releases) page.
-This includes many classes you can make use of, as well as a main method for
-running and producing grading output.
+To make use of this, you first need to build the jgrader jar file 
+using maven. The jar includes many classes you can make use of, 
+as well as a main method for running and producing grading output.
+
+### Creating the jgrader jar file.
+Run `mvn package` from the root of the directory. This should create
+a new directory called `target` and a jar file in that directory
+called `jgrade-2.1.1-all.jar` (there are other files in that directory
+but you can ignore them for now).
+
+Next, copy that jar file to `examples/gradescope/lib`.
+
+### Running an existing autograder
+
+We are now ready to look at an example autograder. In order to make 
+sure that jar file is created, move to the `examples/gradescope` directory.
+From that directory, run `./run_autograder --local`. You should then see
+some json printed to the terminal, these are three autograder tests. If you 
+scroll up in your terminal, you should see the following as the begining of the output 
+from the previous command.
+
+```
+making clean classes/ directory
+compiling java files...
+---
+DONE
+```
+
+This means that we successfully compiled the student's and autograder'
+Java classes. To confirm this, poke through the newly created `classes/` directory.
+You will see two subdirectories, `student/` and `staff/`. Both of these will have
+class files based on the Java files in `src/main/java/`.
+
+### Checkstyle
+Read the error messages that resulted from the `./run_autograder --local` command.
+What do you think is causing the error? Thinking about this for a second before
+continue reading.
+
+<details><summary>Answer (click here to continue reading)</summary>
+<p>
+
+You should notice that the autograder is checking for codestyle and is 
+enforcing checkstyle compliance. 
+
+</p>
+</details>
+
+Next, download the checkstyle jar from 
+https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.5.0/checkstyle-10.5.0-all.jar
+and store it in `lib/`.
+Now if you run, `./run_autograder --local` you should no longer see the error. 
+
+### Assignment and autograder example
+
+Now, I would recommend looking at an example assignment. Jump to
+https://github.com/BMC-CS-113/jgrade/tree/dev/examples/gradescope
+and look at the README there. If this is your first time using
+gradescope as part of a course staff, watch Ellen Spertus's
+(10 minute Youttube video)[https://youtu.be/o1FHbHZwyUY]
+on How to use JGrade for autograding Java assignments on Gradescope.
+
+After watching the video, ping @azpoliak. He will add you to the course
+Gradescope as an instructor. From there, your task will be to create a
+new assignment on gradescope for this example assignment.
+
+## Details
 
 With this, you could have the following setup:
 
