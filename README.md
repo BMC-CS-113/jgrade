@@ -96,9 +96,13 @@ Now if you run, `./run_autograder --local` you should no longer see the error.
 
 ### Assignment and autograder example
 
-Now you are reading to look at an example assignment and autograder. Jump to
+Now you are ready to look at an example assignment and autograder. Jump to
 https://github.com/BMC-CS-113/jgrade/tree/dev/examples/gradescope
-and look at the README there. 
+and read through the README there which describes the different files in the example.
+Most of the files in that directory are for creating and running an autograder.
+Running `make_autograder.sh` will create a zip file in the `zips/` directory 
+that you will upload to gradescope. Make sure to read that README to understand each subdirectory
+and where the JUnit tests are that the autograder uses. 
 
 If this is your first time using
 gradescope as part of a course staff, watch Ellen Spertus's
