@@ -46,8 +46,27 @@ Download maven from https://maven.apache.org/download.cgi
 and then install your
 own copy of maven by following these instructions: https://maven.apache.org/install.html.
 
+#### Installing maven
+From your home directory run the following commands:
+
+```
+wget https://dlcdn.apache.org/maven/maven-3/3.8.7/binaries/apache-maven-3.8.7-bin.tar.gz
+tar xzvf apache-maven-3.8.7-bin.tar.gz
+```
+
+Next add maven to your PATH. In your ~/.bash_profile add the following line:
+
+```
+export PATH="/home/<USER>/apache-maven-3.8.7/bin/:$PATH"
+```
+
+where `<USER>` is your user name. Then run `source .bash_profile` to update your bash.
+
+To confirm mvn is installed, you can
+now run `mvn -version`.
+
 ### Creating the jgrader jar file.
-Run `mvn package` from the root of the directory. This should create
+Run `mvn package` from the root of the `jgrade/` directory. This should create
 a new directory called `target` and a jar file in that directory
 called `jgrade-2.1.1-all.jar` (there are other files in that directory
 but you can ignore them for now).
@@ -113,6 +132,9 @@ If you are familiar with gradescope as an instructor/TA, you can skip the video.
 Next, ping @azpoliak. He will add you to the course
 Gradescope as an instructor. From there, your task will be to create a
 new assignment on gradescope for this example assignment.
+Follow the steps in the Youtube video for creating an assignment.
+You can test the autograder on gradescope by adding any of the mock 
+student submissions from the test submissions directory: https://github.com/BMC-CS-113/jgrade/tree/dev/examples/gradescope/test_submissions
 
 ## Details
 
